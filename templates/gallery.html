@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}		
+{% block content %}
+
+	<link rel="stylesheet" href="{% static "css/gallery.css" %}" type="text/css">                
+	<script src="{% static "js/gallery.js" %}" ></script>
+
+	<div class="container-fluid">
+	<div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+		<img src="{% static "images/clgProfile-1-624x367.jpg" %}" alt="First" class="slide" /><!-- slides -->
+		<img src="{% static "images/landscape-mountains-nature-clouds.jpg" %}" alt="Second" class="slide" />
+		<img src="{% static "images/pexels-photo-132037.jpeg" %}" alt="Third" class="slide" />
+	</div>
+</div>
+</div>
+{% endblock %}

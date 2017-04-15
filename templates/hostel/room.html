@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load staticfiles %}		
+{% block content %}
+
+<link rel="stylesheet" href="{% static "css/room.css" %}" type="text/css">
+
+<div class="container-fluid" style="width:80%;  float:center; border-style:double;overflow-x:hidden; margin-top:10px;margin-bottom:30px;">
+
+{% for room in data %}
+<div class="row" id="room" style="border:double;"> 
+<!-- {{room.room_size}} -->
+<!-- {{room.room_type}} -->
+<!-- {{room.allocated_to}} -->
+
+{% if room.is_vacant == True  %}
+ <div class="col-md-4"  style="padding-left:150px;   margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/vacant.jpe' %}" class="img-responsive">
+        
+  </div>
+
+
+{% elif room.room_size == "Single Seater" and room.room_type == "AC"  %}   
+
+	<div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/rooms-studio1.jpg' %}" class="img-responsive">
+        
+  </div>   
+    
+ {% elif room.room_size == "Double Seater" and room.room_type == "AC" %}
+ <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/download.jpe' %}" class="img-responsive">
+        
+  </div>
+  {% elif room.room_size == "Triple Seater" and room.room_type == "AC"  %}
+ <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/Img0016_1-room2.jpg' %}" class="img-responsive">
+        
+  </div>
+{% elif room.room_size == "Single Seater" and room.room_type == "NON-AC"  %}
+ <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/single.jpe' %}" class="img-responsive">
+        
+  </div>
+ 
+{% elif room.room_size == "Double Seater" and room.room_type == "NON-AC"  %}
+ <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/double.jpe' %}" class="img-responsive">
+        
+  </div>
+
+{% elif room.room_size == "Triple Seater" and room.room_type == "NON-AC"   %}
+ <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px;margin-bottom:10px; width:45%;">
+        <img src="{% static 'images/triple.jpe' %}" class="img-responsive">
+        
+  </div>
+  
+  
+
+ {% endif %}
+   
+    <div class="col-md-4" style="padding-left:150px;  margin-right:30px; margin-top:30px;  width:50%; float:left; font-family:verdana;">
+    	 <label >Allocated To:{{room.allocated_to}} </label><br>
+    	 <label >Room Type: {{room.room_type}}</label><br>
+    	 <label >Hostel:{{room.hostel}}</label><br>
+    	 <label >Floor:{{room.floor}}</label><br>
+    	 <label >Room No: {{room.room_no}}</label><br>
+         <label >Room Size: {{room.room_size}}</label><br>
+ 		    </div>
+</div >
+
+{% endfor %}
+<!-- <div class="row">
+    <div class="col-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px; width:45%;">
+        <img src="{% static 'images/room.jpg' %}" class="img-responsive">
+        
+    </D   <div class="coDouble Seater-md-4" style="padding-left:150px;  padding-right: 0px; margin-top:10px; width:25%;">
+         <label >Aditya </label><br>
+         <label >NON-AC</label><br>
+         <label >Hostel-B</label><br>
+         <label >3rd floor</label><br>
+         <label >417</label><br>
+            </div>
+</div >
+</div> 
+ -->  
+	
+
+{% endblock %}		

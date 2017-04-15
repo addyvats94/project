@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+{% load staticfiles %}
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width" />
+      <meta charset="utf-8" />
+      <!-- <link rel="stylesheet" href="{% static "css/room.css" %}" type="text/css"> -->
+  
+
+  
+ 
+  
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+ 
+   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" type="text/css" href="fratstyle.css"/> -->
+ 
+  <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css">
+  <link rel="stylesheet" href="{% static "css/index.css" %}" type="text/css">
+ 
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ 
+<!-- <script src="nice/jquery.nicescroll.min.js"></script> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    
+      
+<script src="{% static 'js/index1.js' %}" ></script>
+<script src="{% static 'js/register.js' %}" ></script>
+<script src="{% static 'js/login.js' %}" ></script>
+<script src="{% static 'js/jquery.cookie.js' %}" ></script>
+</head>
+
+ 
+<body style="background:ghostwhite">
+	
+<div class="se-pre-con"></div>
+
+<!--navigation menu-->
+
+
+<div class="container-fluid">
+<div class="row-0"> 
+ <div id="output_width"></div>
+    <div id="container">
+      <header class="main-header">
+  
+     <div class= "col-6"><img id="logo"  src="{% static "images/logo.png" %}" alt="JMIETI" ></div>
+
+
+     
+      
+       
+        <nav   class="main-nav" >
+          <ul >
+            <li><a  href="/ /" >HOME</a></li>
+            <li><a href="/hostel/about/" >About us</a></li>
+            <li><a href="/hostel/notice/" >Notices</a></li>
+            <!-- <li><a href="#" >Gallery</a></li> -->
+            <!-- <li><a href="#" >Cotact us</a></li> -->
+            <li><a href="/register/">register</a></li>
+            {% if not request.user.is_authenticated %}
+              <li><a href="/login/" >login</a></li>
+            {% else %}
+
+              <li><a href="javascript:void(0)" id="logout" >Hello {{request.user.email}}/logout</a></li>
+            {% endif %}
+          </ul> 
+        </nav>
+       
+    </header>
+</div>
+</div>
+<div id="block">
+{% block content %}
+
+{% endblock %}
+</div>
+
+
+
+</body>
+</html>

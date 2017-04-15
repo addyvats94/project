@@ -1,0 +1,134 @@
+
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+
+
+
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+<center>
+<div class="form">
+<h3><b>Register</b><span style="font-size:17px;">(If not registered already)</span></h3>
+<br/>
+<form role="form"    name="myform" id="registerform">
+<div class="form-group">
+<div class="col-xs-6">
+
+<input type="text"  id="fname" class="form-control" name="fname" placeholder="First Name" data-toggle="tooltip" data-placement="bottom"  title="Do not use any special characters" pattern="[A-Za-z]{0,40}" required>
+
+</div>
+<div class="col-xs-6">
+<input type="text"  id="lname" placeholder="Last Name" class="form-control" name="lname" data-toggle="tooltip" data-placement="bottom"  title="Do not use any special characters" pattern="[A-Za-z]{0,100}"data-toggle="tooltip" data-placement="bottom"  title="Do not use any special characters" required>
+
+</div>
+
+
+
+
+
+<div class="check">
+
+<div class="col-xs-12">
+<input type="email" id="cname" class="form-control" name="email" placeholder="E-mail address" required >
+
+
+
+</div>
+
+
+</div>
+<div class="check">
+
+<div class="col-xs-12">
+<input type="text" id="uname" class="form-control" name="username" placeholder="Username"  required >
+<input type="text" id="college" class="form-control" name="college" placeholder="college"  required >
+<input type="text" id="roll_no" class="form-control" name="rollno" placeholder="rollno"  required >
+<input type="text" id="mobile_no" class="form-control" name="mobileno" placeholder="mobileno"  required >
+<input type="password" id="password" class="form-control" name="password" placeholder="password"  required >
+
+
+<div id="room_type">
+<input type="radio" name="room_type" value="AC" checked> AC
+<input type="radio" name="room_type" value="NON-AC" > NON-AC<br>
+</div>
+
+<div id="room_size">
+<input type="radio" name="room_size" value="1" checked>Single
+<input type="radio" name="room_size" value="2" > Double
+<input type="radio" name="room_size" value="3" > Triple<br>
+</div>
+</div>
+</div>
+
+
+<div class="over">
+<input type="button" id="register" class="btn btn-default" style="background-color:#5daa90;width:94%;color:white;height:40px;" value="SIGN UP">
+<br/><br/>
+
+</div>
+</div>
+
+</form>
+
+<div id="log">
+
+<!-- <p>Note: By signing up, you agree to our<br/> <a href="#">Terms & Privacy Policy</a></p> -->
+</div>
+
+
+
+</div>
+
+
+
+</center>
+
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+</div>
+
+
+
+</div>
+</div>
+
+<br/>
+
+
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+	

@@ -1,0 +1,8 @@
+.containers
+{
+	width:90%;
+	height:auto; 
+	float:left;
+	border-style:double;
+	overflow-x:hidden; 
+}

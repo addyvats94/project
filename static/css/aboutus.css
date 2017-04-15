@@ -1,0 +1,47 @@
+.about
+{
+	font-size: 30px;
+	margin-left: 45px;
+	height: 10%;
+	width: 15%;
+	background: ghostwhite;
+	color: navy;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+#img 
+{
+	margin-left: 45px;
+	width: 96.5%;
+}
+.detail
+{
+	text-align: auto;
+	width: 92%;
+	margin-left: 45px;
+	
+}
+.contact
+{
+	margin-top: 10px;
+	margin-left: 45px;
+	color: #6495ED;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
