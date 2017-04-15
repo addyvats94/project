@@ -5,19 +5,21 @@ from userprofile.models import User
 
 # Create your models here.
 class Hostel(models.Model):
-	hostel_name=models.CharField(max_length=100,blank=False,null=True)
-	rooms=models.IntegerField(blank=True,null=True)
-	warden=models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-    	)
-	
-	def __unicode__(self):
-		return self.hostel_name
+    hostel_name = models.CharField(max_length=100,blank=False,null=True)
+    rooms = models.IntegerField(blank=True,null=True)
+    warden = models.ForeignKey(
+			 User,
+		     on_delete=models.CASCADE,
+		     )
+
+    def __unicode__(self):
+        return self.hostel_name
 	
 
 class Notices(models.Model):
-	notices=models.FileField(blank=True,null=True)
+    notices=models.FileField(blank=True,null=True)
+    name = models.CharField(max_length=200,blank=False,null=True)
+    description = models.TextField(null=True, blank=True)
 
 class Gallery(models.Model):
 	photos=models.ImageField(blank=True,null=True)
@@ -40,9 +42,9 @@ class Room(models.Model):
 	(SECOND, "Double Seater"),
 	(THIRD, "Triple Seater"),
  	)
- 	ROOM_TYPE = (
-	("NON-AC", "NON-AC"),
-	("AC", "AC"),
+	ROOM_TYPE = (
+				("NON-AC", "NON-AC"),
+				("AC", "AC"),
  	)
 
 	room_no=models.IntegerField(blank=True,null=True)

@@ -28,7 +28,6 @@ def login_user(request):
     # if response.status_code == status.HTTP_200_OK:
     # result = json.loads(response.text)
     user = authenticate(username=username, password=password)
-    print user
     if user.is_active:
         login(request, user)
         
@@ -49,7 +48,5 @@ def logout_user(request):
     data['client_id'] = settings.OAUTH_CLIENT_ID
     data['client_secret'] = settings.OAUTH_CLIENT_SECRET
     data['token'] = request.META["HTTP_AUTHORIZATION"].split("Bearer ")[1]
-    print data
     resp = requests.post(settings.BACKEND_HOST + '/o/revoke_token/', data=data)
-    print resp
     return resp.status_code == status.HTTP_200_OK

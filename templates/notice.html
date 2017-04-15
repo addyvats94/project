@@ -7,8 +7,25 @@
 <div class="col-md-12">
 
 <div class="containers" style="width:82%; float:center; border-style:double;overflow-x:hidden; margin-top:10px;margin-bottom:30px;">
-{{'notice'}}
-	
+    <table>
+{% for notice in data %}
+
+        <tr>
+            <td>{{notice.name}}</td>
+        </tr>
+        <tr>
+            <td>{{notice.description}}</td>
+        </tr>
+        <tr>
+
+            <td>
+                <a href="{{notice.notices}}">click here to
+                        download the PDF file.</a>
+            </td>
+        </tr>
+
+    {% endfor %}
+	</table>
 </div>
 </div>
 

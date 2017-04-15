@@ -60,12 +60,12 @@ class UserSave(APIView):
 	def get(self,request):
 		return render(request,'user/register.html',{})
  	
- 	def post(self, request):
+	def post(self, request):
  		
  		
 	
- 		data = request.data
- 		user_data = {
+		data = request.data
+		user_data = {
  			'firstname': data.get('firstname'),
  			'lastname': data.get('lastname'),
  			'username': data.get('username'),
@@ -77,12 +77,12 @@ class UserSave(APIView):
  			
 
  		}
- 		room_data = {
+		room_data = {
  			'room_type': data.get('room_type'),
  			'room_size': data.get('room_size')
  		}
- 		user_serializer = serializers.UserSerializer(data=user_data)
- 		try:
+		user_serializer = serializers.UserSerializer(data=user_data)
+		try:
  			
 			if user_serializer.is_valid():
 				user = user_serializer.save() 

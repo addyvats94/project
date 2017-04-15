@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+from HostelActivities import views
 
 admin.site.site_header = 'MUKAND HOSTEL'
 urlpatterns = [
